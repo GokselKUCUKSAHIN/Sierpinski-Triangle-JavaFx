@@ -28,14 +28,19 @@ public class Main extends Application
         Pane root = new Pane();
         child = root.getChildren();
         //
-
+        Sierpinski sierpinski = new Sierpinski();
+        for (Dot dot : sierpinski.getDots())
+        {
+            child.add(dot.getNode());
+        }
 
         root.setOnMouseClicked(e -> {
             if (e.getButton() == MouseButton.PRIMARY)
             {
-                Dot d = new Dot(e.getSceneX(), e.getSceneY());
-                System.out.printf("x: %3.1f, y: %3.1f\n", e.getSceneX(), e.getSceneY());
-                child.addAll(d.getNode());
+                //Dot d = new Dot(e.getSceneX(), e.getSceneY());
+                //System.out.printf("x: %3.1f, y: %3.1f\n", e.getSceneX(), e.getSceneY());
+                //child.addAll(d.getNode());
+                sierpinski.insertADot(e.getSceneX(), e.getSceneY());
             }
         });
 

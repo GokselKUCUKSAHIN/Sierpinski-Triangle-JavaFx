@@ -8,18 +8,18 @@ public class Dot
 {
 
     // DEFAULT Outer edge locations
-    private double x = -100;
-    private double y = -100;
+    private double x;
+    private double y;
     private Group body = new Group();
 
-    public static ArrayList<Dot> dots = new ArrayList<>();
+    //public static ArrayList<Dot> dots = new ArrayList<>();
 
     public Dot(double x, double y)
     {
         this.x = x;
         this.y = y;
         draw();
-        dots.add(this);
+        //dots.add(this);
     }
 
     private void draw()
@@ -33,6 +33,12 @@ public class Dot
         ring.setStrokeWidth(1.2);
         ring.setStroke(Color.SNOW);
         this.body.getChildren().addAll(center, ring);
+    }
+
+    public void setLocation(double x, double y)
+    {
+        this.body.setLayoutX(x);
+        this.body.setLayoutY(y);
     }
 
     public Group getNode()
