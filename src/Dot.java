@@ -16,17 +16,21 @@ public class Dot
 
     public Dot(double x, double y)
     {
+        this.x = x;
+        this.y = y;
         draw();
         dots.add(this);
     }
 
     private void draw()
     {
-        Circle center = new Circle(x, y, 4, Color.SNOW);
+        this.body.setLayoutX(x);
+        this.body.setLayoutY(y);
+        Circle center = new Circle(0, 0, 2.5, Color.SNOW);
         center.setStroke(Color.SNOW.darker().darker());
         center.setStrokeWidth(0.3);
-        Circle ring = new Circle(x, y, 10,Color.TRANSPARENT);
-        ring.setStrokeWidth(3);
+        Circle ring = new Circle(0, 0, 6.3, Color.TRANSPARENT);
+        ring.setStrokeWidth(1.2);
         ring.setStroke(Color.SNOW);
         this.body.getChildren().addAll(center, ring);
     }

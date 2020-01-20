@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -11,6 +12,7 @@ import javafx.util.Duration;
 
 public class Main extends Application
 {
+
     public static ObservableList<Node> child;
     //
     private static final String title = "JellyBeanci";
@@ -28,6 +30,14 @@ public class Main extends Application
         //
 
 
+        root.setOnMouseClicked(e -> {
+            if (e.getButton() == MouseButton.PRIMARY)
+            {
+                Dot d = new Dot(e.getSceneX(), e.getSceneY());
+                System.out.printf("x: %3.1f, y: %3.1f\n", e.getSceneX(), e.getSceneY());
+                child.addAll(d.getNode());
+            }
+        });
 
 
         root.setOnKeyPressed(e -> {
@@ -65,7 +75,7 @@ public class Main extends Application
         //
         stage.setTitle(title);
         stage.setResizable(false);
-        stage.setScene(new Scene(root, width - 10, height - 10,backcolor));
+        stage.setScene(new Scene(root, width - 10, height - 10, backcolor));
         stage.show();
         root.requestFocus();
     }
