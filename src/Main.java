@@ -10,6 +10,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.util.ArrayList;
+
 public class Main extends Application
 {
 
@@ -83,6 +85,15 @@ public class Main extends Application
         stage.setScene(new Scene(root, width - 10, height - 10, backcolor));
         stage.show();
         root.requestFocus();
+    }
+
+    public static void addNode(Node node)
+    {
+        child.add(node);
+    }
+    public static void removeNode(Node node)
+    {
+        child.remove(node);
     }
 
     public static void main(String[] args)
