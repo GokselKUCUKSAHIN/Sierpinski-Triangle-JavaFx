@@ -10,12 +10,10 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.util.ArrayList;
-
 public class Main extends Application
 {
 
-    public static ObservableList<Node> child;
+    private static ObservableList<Node> child;
     //
     private static final String title = "JellyBeanci";
     public static final int width = 800;
@@ -91,6 +89,7 @@ public class Main extends Application
     {
         child.add(node);
     }
+
     public static void removeNode(Node node)
     {
         child.remove(node);

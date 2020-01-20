@@ -22,9 +22,24 @@ public class Sierpinski
         }
         if (counter == 3)
         {
-            // draw
+            // Clear pass
+            for (Triangle tri : Triangle.triangles)
+            {
+                tri.destroy();
+            }
+            Triangle.triangles.clear();
+
+            // Draw
             Triangle triangle = new Triangle(dots[0], dots[1], dots[2]);
-            triangle.draw();
+            for (int i = 0; i < 1093; i++)
+            {
+                Triangle.triangles.get(i).generate();
+            }
+            for (Triangle tri : Triangle.triangles)
+            {
+                tri.draw();
+            }
+
             // reset all dot locations
             counter = 0;
             for (int i = 0; i < 3; i++)
