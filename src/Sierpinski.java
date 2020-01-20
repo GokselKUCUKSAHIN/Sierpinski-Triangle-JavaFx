@@ -22,9 +22,9 @@ public class Sierpinski
         }
         if (counter == 3)
         {
-            //draw
+            // draw
 
-            //reset all dot's location
+            // reset all dot locations
             counter = 0;
             for (int i = 0; i < 3; i++)
             {
