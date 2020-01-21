@@ -64,6 +64,11 @@ public class Main extends Application
                     System.out.println("Child Count: " + child.size());
                     break;
                 }
+                case F4:
+                {
+                    Sierpinski.clearAll();
+                    break;
+                }
             }
         });
         update = new Timeline(new KeyFrame(Duration.millis(16), e -> {
