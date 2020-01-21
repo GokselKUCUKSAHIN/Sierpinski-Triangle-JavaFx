@@ -37,7 +37,11 @@ public class Triangle
         // Settings
         for (Line line : triangle)
         {
-            line.setStroke(Color.SNOW);
+            //line.setStroke(Color.SNOW); //
+            double dist = Utils.fastDistance(line.getStartX(),
+                    line.getStartY(), line.getEndX(), line.getEndY());
+            double color = Utils.map(dist, 1, 100, 0, 360);
+            line.setStroke(Color.hsb(color, 1, 1));
             line.setOpacity(0.5);
             line.setStrokeWidth(0.5);
         }

@@ -33,7 +33,6 @@ public class Main extends Application
         {
             child.add(dot.getNode());
         }
-
         root.setOnMouseClicked(e -> {
             if (e.getButton() == MouseButton.PRIMARY)
             {
@@ -43,7 +42,6 @@ public class Main extends Application
                 sierpinski.insertADot(e.getSceneX(), e.getSceneY());
             }
         });
-
 
         root.setOnKeyPressed(e -> {
             switch (e.getCode())
